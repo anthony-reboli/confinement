@@ -21,10 +21,22 @@ include("include/bar-nav.php");
        
             <h1>Entraide confinement marseille</h1>
 
+
+            
+
                 <div>
                     <?php
+                                            $date=date('Y-m-d');
+                        $req2="SELECT * FROM sport where jour= '$date'";
+                        $req2Q=mysqli_query($connexion,$req2);
+                        $req2R=mysqli_fetch_all($req2Q);
+                        
+                        
+                    ?>
+                        
+                            <video src="<?php echo $req2R[0][4]?>" width="400" height="222" controls></video>
+                              
 
-?>
                 </div>
 
             <div>
@@ -44,13 +56,11 @@ include("include/bar-nav.php");
 
                     <div>
                         <?php
-                        $date=date('Y-m-d');
-                        $req2="SELECT * FROM sport where jour= '$date'";
-                        $req2Q=mysqli_query($connexion,$req2);
-                        $req2R=mysqli_fetch_all($req2Q);
+
+                        
                         $sport=$req2R[0][2];
                         echo "Le sport du $date<br>";
-                        echo"Le sport du jour est : $sport";
+                        echo"Le sport du jour est : $sport"; 
                         ?>
 
                     </div>
@@ -75,6 +85,13 @@ include("include/bar-nav.php");
                             </div>
                     </div>
         </div>
+
+        <div>
+            <?php
+            include("include/formsport.php"); //sport
+            include("include/formconseil.php"); //conseil
+            ?>
+
 
     
     
