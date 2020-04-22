@@ -11,7 +11,7 @@
         ?>
 <body class="inscription">
         <header class="header">
-      <?php include 'bar-nav.php'?>;
+      <?php include '../include/bar-nav.php'?>;
       </header>
 
         <?php
@@ -19,7 +19,7 @@
         // include("bar-nav.php");
         if (isset($_SESSION['login']))
         {
-          $connexion = mysqli_connect("localhost","root","","forum");
+          $connexion = mysqli_connect("localhost","root","","rush");
 
           $requete = "SELECT * FROM utilisateurs WHERE login='".$_SESSION['login']."'";
           $req = mysqli_query($connexion, $requete);
@@ -59,10 +59,8 @@
        </div>
 
            <div id="info-prof">
-                <p class="profform">RanK: <?php echo $data['rank']?></p>
-                <p class="profform">Nom: <?php echo $data['name']?></p>
-                <p class="profform">Prenom: <?php echo $data['surname']?></p>
                 <p class="profform">Inscrit le: <?php echo $data['date']?></p>
+                <p class="profform">Inscrit le: <?php echo $data['arrondissement']?></p>
           </div>
 
     </article>

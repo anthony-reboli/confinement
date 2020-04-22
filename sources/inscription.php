@@ -2,7 +2,7 @@
 
     session_start();
 
-$connexion =  mysqli_connect("localhost","root","","boutique");
+$connexion =  mysqli_connect("localhost","root","","rush");
 if (!isset($_SESSION["login"])) {
     
 
@@ -25,11 +25,11 @@ if (!isset($_SESSION["login"])) {
     <main id="inscriptionmain">
     
 
-    <h1 style="color:#26ec2e;margin-left: 115px;"> Inscription </h1>
+    <h1> Inscription </h1>
         <section>
         
 
-        <form id="forminsc" method='POST' action='inscription.php'>
+        <form id="forminsc" method='POST'>
 
 
             <article>
@@ -37,16 +37,6 @@ if (!isset($_SESSION["login"])) {
                 <br><input type="text" name='login' required />
             </article>
 
-            <article>
-                <label class="labins"> Nom </label>
-                <br><input type="text" name='nom' required />
-            </article>
-
-
-            <article>
-                <label class="labins"> Prénom </label>
-                <br><input type="text" name='prenom' required />
-            </article>
 
             <article>
                 <label class="labins"> Mot de passe </label>
@@ -60,36 +50,22 @@ if (!isset($_SESSION["login"])) {
 
 
             <article>
-                <label class="labins"> Votre adresse </label>
-                <br><input type="text" name='adresse' required />
-            </article>
-
-
-            <article>
                 <label class="labins"> Votre code postal </label>
                 <br><input type="number" name='code' required />
             </article>
 
 
-            <article>
-                <label class="labins"> Votre Email </label>
-                <br><input type="email" name='email' required />
-            </article>
 
-            <button class="boutonin" name="inscription"><img height="98" width="78" src="upload/buton2.png"></button>
+            <button class="boutonin" name="inscription"></button>
 
             <?php
 
         if (isset($_POST['inscription']))
        {
             $login = $_POST['login'];
-            $nom = $_POST['nom'];
-            $prenom = $_POST['prenom'];
-            $email = $_POST['email'];
             $mdp= password_hash($_POST["mdp1"], PASSWORD_DEFAULT, array('cost' => 12));
-            $adresse = $_POST['adresse'];
             $code = $_POST['code'];
-            $email = $_POST['email'];
+
 
         
 
@@ -109,10 +85,11 @@ if (!isset($_SESSION["login"])) {
            }
            if ($trouve==false)
            {
-            $sql = "INSERT INTO utilisateurs (login,nom,prenom,password,adresse,codepostal,email)
-                VALUES ('$login','nom','prenom','$mdp','$adresse','$code','$email')";
+            $sql = "INSERT INTO utilisateurs (login,password,arrondissement)
+                VALUES ('$login','$mdp','$code')";
             $query=mysqli_query($connexion,$sql);
-            header('location:connexion.php');
+            var_dump($sql);
+            // header('location:connexion.php');
             }
            }
            else

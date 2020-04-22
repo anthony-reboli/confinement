@@ -27,16 +27,19 @@ include("include/bar-nav.php");
                 <div>
                     <?php
                                             $date=date('Y-m-d');
-                        $req2="SELECT * FROM sport where jour= '$date'";
-                        $req2Q=mysqli_query($connexion,$req2);
-                        $req2R=mysqli_fetch_all($req2Q);
-                        
-                        
-                    ?>
-                        
-                            <video src="<?php echo $req2R[0][4]?>" width="400" height="222" controls></video>
-                              
+                        $citation="SELECT * from citation ";
+                        $citationQ=mysqli_query($connexion,$citation);
+                        $citationR=mysqli_fetch_all($citationQ);
 
+                        $text=$citationR[0][2];
+                        $img=$citationR[0][3];
+
+                        echo "$text <br>";
+                        ?>
+                        <img src="<?php echo $img?>">
+                        
+                        
+            
                 </div>
 
             <div>
@@ -52,13 +55,18 @@ include("include/bar-nav.php");
         <div>
 
                 <div>
-                    <h1>Rubrique et sport</h1>
+                    <h1>Rubrique de sport</h1>
 
                     <div>
                         <?php
-
+                        $req2="SELECT * FROM sport where jour= '$date'";
+                        $req2Q=mysqli_query($connexion,$req2);
+                        $req2R=mysqli_fetch_all($req2Q);
                         
                         $sport=$req2R[0][2];
+                        ?>
+                        <video src="<?php echo $req2R[0][4]?>" width="400" height="222" controls></video>
+                        <?php
                         echo "Le sport du $date<br>";
                         echo"Le sport du jour est : $sport"; 
                         ?>
