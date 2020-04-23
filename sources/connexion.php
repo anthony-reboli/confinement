@@ -41,7 +41,7 @@
 <html>
 <head>
     <title>boutique - Connexion</title>
-    <link rel="stylesheet" type="text/css" href="confinement.css">
+    <link rel="stylesheet" type="text/css" href="../confinement.css">
     <meta charset="utf-8">
 </head>
 <body id="connexionbody">

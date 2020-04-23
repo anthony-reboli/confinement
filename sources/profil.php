@@ -24,6 +24,8 @@
           $requete = "SELECT * FROM utilisateurs WHERE login='".$_SESSION['login']."'";
           $req = mysqli_query($connexion, $requete);
           $data = mysqli_fetch_assoc($req);
+          
+
   ?>
     <section id="conteneur1">
         
@@ -65,10 +67,20 @@
 
     </article>
 
-         
-        
+         <form method="post">
+          <input type="submit" name="supri" value="suprimer">
+        </form>
    </section>
   <?php
+
+    if(isset($_POST['supri']))
+    {
+      $user=$data['id'];
+      $requetesup="DELETE FROM utilisateurs where id='$user'";
+      $requetesupQ=mysqli_query($connexion,$requetesup);
+      session_unset();
+      header("location:../index.php");
+    }
 
     if (isset($_POST['Modifier']))
     {
