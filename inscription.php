@@ -15,16 +15,20 @@ if (!isset($_SESSION["login"])) {
 <head>
     <meta charset="UTF-8">
     <title> Inscription</title>
-    <link rel="stylesheet" href="boutique.css">
+    <link rel="stylesheet" href="confinement.css">
 </head>
 
 <body id="inscriptionbod">
     <header>
     </header>
     <main id="inscriptionmain">
-    
 
-    <div class="inscription"> <h1> Inscription </h1>
+    <div class="inscription">
+    <div class="bulleinsc">
+    <div class="bulleinsctxt">
+        <h1> Inscription </h1>
+    </div>   
+    </div>
         <section>
         
 

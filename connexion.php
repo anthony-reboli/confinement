@@ -58,10 +58,12 @@
                 
                      <section class="conteneur1">
                 <div class="formulaire">
-
+                
+                <div class="bulleco">
+                <div class="bullecotxt">
                 <h2>Connexion</h2>
-                    
-                    
+                </div>
+                </div>    
                     <form method="post">
                         <div class="idpw">
                             <label id="ID">Identifiant</label>
