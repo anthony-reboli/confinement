@@ -45,15 +45,21 @@
   <?php
   if ($_SESSION['login'] == 'admin'){
     ?>
+    <form method="post">
+          <input type="submit" name="supri" value="suprimer">
+        </form>
+   </section>
+  <?php
+
+    if(isset($_POST['supri']))
+    {
+      $user=$_GET['id'];
+      $requetesup="DELETE FROM utilisateurs where id='$user'";
+      $requetesupQ=mysqli_query($connexion,$requetesup);
+      header("location:../index.php");
+    }
     
-     
-
-
-    <?php
-
-
-    
-  }
+                                      }
 }
          else
         {

@@ -11,7 +11,7 @@
         ?>
 <body class="inscription">
         <header class="header">
-      <?php include '../include/bar-nav.php'?>;
+      <?php include '../include/bar-nav.php'?>
       </header>
 
         <?php
