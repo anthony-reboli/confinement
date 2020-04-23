@@ -90,6 +90,9 @@
           ?>
     
     </main>
+         <footer class="footer">
+            <aside id="Copyright"><p> Copyright 2020 Coding School | All Rights Reserved | Project by Gregory-F & Anthony & Alexandra & Gregory-J & Mohamed</p></aside>
+        </footer>
 
 </body>
 </html>
