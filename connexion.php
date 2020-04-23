@@ -65,9 +65,9 @@
                     <form method="post">
                         <div class="idpw">
                             <label id="ID">Identifiant</label>
-                            <br><input type="text" name="login" placeholder="Identifiant" ></br>
+                            <br><input class="input" type="text" name="login" placeholder="Identifiant" ></br>
                             <label id="PW">Mot de passe</label>
-                            <br><input type="password" name="password" placeholder="Mot de passe" >
+                            <br><input class="input" type="password" name="password" placeholder="Mot de passe" >
                         </div>
                             </br>
                             <button type="submit" class="bouton" name="connexion">Connexion</button>
