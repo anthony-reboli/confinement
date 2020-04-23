@@ -8,16 +8,16 @@
 
 		
 				$eff= ("DELETE FROM topics WHERE id=$idto ");
-				var_dump($eff);
 				$query2=mysqli_query($connexion,$eff);
-				header("refresh:0");
-				
-	
+				//header("refresh:0");
+
+
+		
 		}
 	
 		?>
 	<form method="post" >
-	<button type="submit"name="supp<?php echo $i ?>" ></button>
+	<button name="supp<?php echo $i ?>" id="btsuppto" ><img width="40" height="40" src="../upload/corbeille.png"></button>
 	</form>	
 	
 																  

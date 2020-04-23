@@ -1,0 +1,19 @@
+#topic{
+	background-color: green;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+#conteneur{
+	background-color: blue;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+}
+
+#formulaire{
+	background-color: red;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+}
