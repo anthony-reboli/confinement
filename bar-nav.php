@@ -2,24 +2,16 @@
     if (isset($_SESSION['login'])==false)
     {
     ?>
-  <nav class="recher">
-      <aside id="searchbartop">
-        <input type="checkbox" id="searchbartopbtn" />
-        <label for="searchbartopbtn"><img title="Recherche" height="40" src="img/recherche.png"></label>
-        <form method="post" action="topic.php" id="recherche bar-nav">
-                  <div><input type="text" name="req" ></div>
-                  <button type="submit" name="rech"><b>Recherche</b></button>
-                  
-          </form>
-      </aside>
-  </nav>
   
+  <h1 id="ARGrandh1">Entraide Confinement Marseille</h1>
   <nav class="menu">
-      <p class=""><a href="index.php">Accueil</a></p>
-      <p class=""><a href="topic.php">Forum</a></p>
-      <img height="" src="">
-      <p class=""><a href="connexion.php">Connexion</a></p>
-      <p class=""><a href="inscription.php">Inscription</a></p>
+    <ul>
+      <img id="ARlogo"src="upload/logo.png"><a href="index.php"></a>
+      <li><a href="index.php">Accueil</a></li>
+      <li><a href="topic.php">Forum</a></li>
+      <li><a href="connexion.php">Connexion</a></li>
+      <li><a href="inscription.php">Inscription</a></li>
+    </ul>
   </nav>
       
 
@@ -31,28 +23,19 @@
     {
 
     ?>
-  <nav class="recher">
   
-      <aside id="searchbartop">
-        <input type="checkbox" id="searchbartopbtn" />
-        <label for="searchbartopbtn"><img title="Recherche" height="40" src="img/recherche.png"></label>
-        <form method="post" action="topic.php" id="recherche bar-nav">
-                  <div><input type="text" name="req" ></div>
-                  <button type="submit" name="rech"><b>Recherche</b></button>
-                  
-          </form>
-      </aside>
       
   </nav>
+  <h1 id="ARGrandh1">Entraide Confinement Marseille</h1>
   <nav class="menu">
-      
-        <p class="menu-item"><a href="index.php">Accueil</a></p>
-        <p class=""><a href="topic.php">Forum</a></p>
-        <img height="" src="">
-        <p class="menu-itemc"><a href="profil.php">Mon profil</a></p>
-        <p class="menu-itemc"><a href="index.php?deconnexion=true">Déconnexion</a></p>
-         
-    </nav>
+    <ul>
+        <img id="ARlogo"src="upload/logo.png"><a href="index.php"></a>
+        <li><a href="index.php">Accueil</a></li>
+        <li><a href="topic.php">Forum</a></li>
+        <li><a href="profil.php">Mon profil</a></li>
+        <li><a href="index.php?deconnexion=true">Déconnexion</a></li>
+    </ul>   
+  </nav>
  
      <?php
                 
