@@ -9,7 +9,7 @@
         <?php
         session_start();
         ?>
-<body class="profil">
+<body class="bodyprofil">
         <header class="header">
 
       </header>
@@ -44,33 +44,33 @@
 
             <h3 id="H3prof">changement de mot de passe et pseudo</h3>
               <form name="loginform" id="loginform" action="#" method="post" enctype="multipart/form-data" class="wpl-track-me"> 
+                <div class="inputprofil">
                 <p class="login-username">
                     <label class="profform" for="user_login">Username</label> 
                     <input type="text" id="user_login" class="input" placeholder="New Username" value="<?php echo $data['login']?>" size="20" name="login"/>
-                </p> 
+                </p>
+
                 <p class="login-password"> 
                     <label class="profform" for="user_pass">Password</label>
                     <input type="password" name="mdp" id="user_pass" class="input" placeholder="New Password" value="<?php echo $data['password']?>" size="20"/> 
                 </p>  
-
-                <p class="login-submit"><input type="submit" name="Modifier" id="submit" class="button-primary" value="Modifier" />
+                <div id="boutonmodifprofil">
+                <input type="submit" name="Modifier" id="submit" class="button-primary" value="Modifier" />
                     <input type="hidden" name="redirect_to" value="#"/>
-                </p>  
-             </form>
+                
+                </div>
+                </div>  
+              <div id="info-prof">
+                <p class="profform">Inscrit le : <?php echo $data['date']?></p>
+                <p class="profform">Arrondissement : <?php echo $data['arrondissement']?></p>
+              </div>
+              </form>
 
-            <div id="info-prof">
-                <p class="profform">Inscrit le: <?php echo $data['date']?></p>
-                <p class="profform">Inscrit le: <?php echo $data['arrondissement']?></p>
-            </div>
        </div>
 
 
 
     </article>
-
-    <form method="post" id="boutonsup">
-          <input type="submit" name="supri" value="suprimer">
-    </form>
 
    </section>
   <?php
