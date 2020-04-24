@@ -1,6 +1,8 @@
 <?php
 
 session_start();
+if(isset($_SESSION['login']))
+{
 ?>
 
 <html>
@@ -62,8 +64,11 @@ session_start();
 
 					}
 					
-
+						if (isset($_SESSION['login']))
+						{
 						$user = $_SESSION['login'];
+						}
+
 						$requete1 = "SELECT * FROM topics INNER JOIN utilisateurs ON user_id=utilisateurs.id where login = '$user' ORDER BY datetopic DESC ";
 						$query1 = mysqli_query($connexion,$requete1);
 						$resultat1 = mysqli_fetch_all($query1);
@@ -74,6 +79,7 @@ session_start();
 						$description=$_POST['description'];
 						$titre=$_POST['titre'];
 						$login=$_SESSION['login'];
+
 						$requet="INSERT INTO topics (title, description, user_id, arrondtopic,datetopic) VALUES ('$titre','$description', '$id', '$arrond', NOW())";
 
 						$query=mysqli_query($connexion,$requet);
@@ -174,3 +180,9 @@ session_start();
         </footer>
 		</body>
 </html>
+<?php
+}
+else{
+	header("location:../sources/connexion.php");
+}
+?>
