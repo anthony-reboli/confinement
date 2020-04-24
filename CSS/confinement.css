@@ -1,19 +1,75 @@
+/*PAGE TOPIC*/
 #topic{
-	background-color: green;
+	margin: 0;
+	padding: 0;
+	background-image: url(../upload/topic.jpg);
+	background-size: cover;
+	background-repeat: no-repeat;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
+
+	
 }
 #conteneur{
-	background-color: blue;
+	background-color:#8bc34ad9;
 	display: flex;
-	flex-direction: row;
+	flex-direction: column;
 	justify-content: center;
+	align-items: center;
+	width: 90%;
+	margin-left: 100px;
+	margin-top: 50px;
+	
 }
 
 #formulaire{
-	background-color: red;
+	background-color: #bdbdbdb8;
 	display: flex;
-	flex-direction: row;
+	flex-direction:row;
+	justify-content: space-around;
+	margin : 30px;
+	width: 80%;
+
+}
+#btsuppto{
+	border-radius: 100%;
+	cursor: pointer;
+
+
+}
+.titre{
+	text-align: center;
+
+}
+#titres{
+	text-align: center;
+	font-size: 40px;
+	font-family: cursive;
+}
+
+#creerto{
+	background-color:#8bc34ad9;
+	display: flex;
+	flex-direction: column;
 	justify-content: center;
+	align-items: center;
+	width: 40%;
+	margin-left: 550px;
+}
+.title{
+	font-size: 20px;
+}
+.lien{
+	text-decoration: none;
+	color: white;
+	font-family: bold;
+}
+.formto{
+	font-size: 20px;
+	font-family: cursive;
+	height: 40px;
+	width: 350px;
+	border-radius: 10px 10px 10px 10px;
+	
 }

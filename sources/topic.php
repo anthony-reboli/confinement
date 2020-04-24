@@ -39,34 +39,24 @@ session_start();
     }
     ?>
 	</header>
-					<h1 id="titres">Creer vos Topics</h1>
-
+			<h1 id="titres">Bienvenue sur nos Topics!</h1>
+		
+					<div id="creerto">
+						<h1 id="titres">Creer vos Topics</h1>
 					<?php
 					$connexion = mysqli_connect ("localhost","root","","rush");
-					//date_default_timezone_set('Europe/Paris');
-								//$connexion = mysqli_connect ("localhost","root","","rush");
-								//$login=$_SESSION['login'];
-							// 	$requete = "SELECT * FROM topics INNER JOIN utilisateurs ON utilisateurs.id=user_id";
-							// 	$query = mysqli_query($connexion,$requete);
-							// 	$resultat = mysqli_fetch_all($query);
-							// var_dump($resultat);
-							// 	$arrond=$resultat[0][9];
-							// 	$id=$resultat[0][3];
-									//$req="SELECT login FROM `topics` inner join utilisateurs ON utilisateurs.id=user_id";
-									//$query2= mysqli_query($connexion,$req);
-											//$resultat2 = mysqli_fetch_all($query2);
-												//var_dump($resultat2);
+				
 
 					if (isset($_POST['creerto'])) {
 
 						?>
-
+					
 					<form method="post">
-					<label>Titre</label><br>
-					<input type="text" name="titre" required><br>
-					<label>Description</label><br>
-					<input type="text" name="description" required><br>
-					<input type="submit" name="valid"><br>
+					<label class="title">Titre</label><br>
+					<input class="formto" type="text" name="titre" required><br>
+					<label class="title">Description</label><br>
+					<input class="formto" type="text" name="description" required><br>
+					<button name="valid"><img width="40" height="40" src="../upload/ok.jpg"></button>
 					</form>
 					<?php	
 
@@ -83,7 +73,6 @@ session_start();
 						$id=$resultat1[0][6];
 						$requet="INSERT INTO topics (title, description, user_id, arrondtopic,datetopic) VALUES ('$titre','$description', '$id', '$arrond', NOW())";
 						$query=mysqli_query($connexion,$requet);
-						var_dump($requet);
 
 					}
 					if (isset($_POST['creer'])) {
@@ -91,12 +80,14 @@ session_start();
 					?>
 
 					<form method="post">
-					<input type="submit" name="creerto" value="Création">
+					<button name="creerto"><img width="30" height="30" src="../upload/ajout.png"></button>
 					</form>
 
 					<form method="post">
-					<input type="submit" name="creer" value="Annuler">
+					<button name="creer"><img width="40" height="40" src="../upload/corbeille.png"></button>
+
 					</form>
+					</div>
 
 					
 					
@@ -105,9 +96,9 @@ session_start();
 
 
 
-
+        <h1 id="titres">Nos Topics</h1>
 				<section id="conteneur">
-								<h1 id="titres">Nos Topics</h1>
+								
 						<?php
 						
 								date_default_timezone_set('Europe/Paris');
@@ -116,12 +107,7 @@ session_start();
 								$requete1 = "SELECT * FROM topics INNER JOIN utilisateurs ON user_id=utilisateurs.id ORDER BY datetopic DESC";
 								$query1 = mysqli_query($connexion,$requete1);
 								$resultat1 = mysqli_fetch_all($query1);
-								var_dump($resultat1);
 								$arrond=$resultat1[0][9];
-
-					
-				
-						
 								
 									$i=0;
 						foreach($resultat1 as $value)
@@ -129,12 +115,12 @@ session_start();
 								$idto=$value[0];		
 							  ?>
 								<div id="formulaire">
-									<a href="conversation.php?id=<?php echo $idto?>">
-									<p class="titre">Titre:<br><?php echo $value[1]?></p></a>
-									<p>Login:<br><?php echo $value[7]?></p>
-									<p>Description du topic:<br><?php echo $value[2]?></p>
-									<p>Date du topic:<br><?php echo $value[4]?></p>
-									<p>Arrondissement:<br><?php echo $value[5]?></p>
+									<a class="lien" href="message.php?id=<?php echo $idto?>">
+									<p class="title">Titre:<br><?php echo $value[1]?></p></a>
+									<p class="title">Login:<br><a class="lien" href="user.php?id=<?php echo $value[6]?>"><?php echo $value[7]?></p></a>
+									<p class="title">Description du topic:<br><?php echo $value[2]?></p>
+									<p class="title">Date du topic:<br><?php echo $value[4]?></p>
+									<p class="title">Arrondissement:<br><?php echo $value[5]?></p>
 										<?php	
 											if ($_SESSION['login']=='admin') 
 											{
@@ -154,9 +140,7 @@ session_start();
 
 
 				</section>
-				<footer class="footer">
-					 <aside> Copyright 2020 Coding School | All Rights Reserved | Project by Anthony,Mohamed,Grégory.</aside>
-				</footer>
-	
+			
+	  <?PHP include("footer.php");?>
 		</body>
 </html>
