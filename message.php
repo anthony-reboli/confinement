@@ -19,6 +19,17 @@
         
         <?php
         $id = $_GET["id"]; 
+        $requeteto="SELECT * FROM topics WHERE id = $id";
+        $queryto= mysqli_query($connexion, $requeteto);
+        $reponse= mysqli_fetch_all($queryto);
+        foreach ($reponse as $value) 
+        {
+            ?>
+            <article class="tit-top">
+                <h1><b>Topic <?=$value[1]?></b></h1>
+            </article>
+            <?php
+        }
         if (isset($_SESSION["login"])) 
         {
         ?>
@@ -57,7 +68,7 @@
         $resultat1 = mysqli_fetch_all($querymes);
 
         $i = 0;
-        $idmsg = $resultat1[$i][0];
+     
 
           foreach ($resultat1 as $avis)
            {
